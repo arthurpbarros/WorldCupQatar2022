@@ -20,7 +20,8 @@ export default {
   <div id="main">  
     <div class="options_user font-sans">
       <img :src="logo" alt="">
-      <button class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-900 hover:text-white"> PREENCHER TABELA </button>
+      <router-link to="groups" class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-900 hover:text-white"> INICIAR PROGRESSO </router-link>
+      <!-- <button class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-900 hover:text-white">  </button> -->
       <button class="outline outline-red-900 rounded px-2 py-2 text-red-900 hover:bg-red-900 hover:text-white"> CARREGAR PROGRESSO </button>
     </div>
   </div>

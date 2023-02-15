@@ -11,7 +11,13 @@ module.exports = {
       colors: {
         'primary': '#7f1d1d',
       },
+      screens: {
+        'lg': '1200px',
+      }
     },
+    // screens: {
+    //   'tablet': '1174px',
+    // }
   },
   plugins: [],
 }

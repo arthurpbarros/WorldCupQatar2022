@@ -5,6 +5,13 @@ import './style.css'
 import './input.css'
 import App from './App.vue'
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas);
+import { fab } from '@fortawesome/free-brands-svg-icons';
+library.add(fab);
+
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -23,9 +30,11 @@ router.beforeEach((to, from) => {
 
 });
 
+library.add(fas);
+
 app.use(router);
 app.use(pinia);
-app.mount('#app');
+app.component("font-awesome-icon", FontAwesomeIcon).mount('#app');
 
 
 
