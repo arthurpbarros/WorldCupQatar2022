@@ -12,7 +12,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 import { fab } from '@fortawesome/free-brands-svg-icons';
 library.add(fab);
-
+library.add(fas);
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -32,7 +32,6 @@ router.beforeEach((to,from) => {
   // console.log(from.name, to.name);
 });
 
-library.add(fas);
 
 app.use(router);
 app.use(pinia);

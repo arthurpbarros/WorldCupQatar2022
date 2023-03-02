@@ -1,6 +1,6 @@
 <script>
 import { wc_store } from '../store/store.js';
-import round from '../components/rounded.vue';
+import round from '../components/round.vue';
 export default {
   setup() {
     const store = wc_store();
