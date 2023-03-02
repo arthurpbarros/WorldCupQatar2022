@@ -29,7 +29,7 @@ const router = createRouter({
 
 router.beforeEach((to,from) => {
   const store = wc_store();
-  console.log(from.name, to.name);
+  // console.log(from.name, to.name);
 });
 
 library.add(fas);

@@ -1,13 +1,11 @@
-import { times, estadios, grupos, jogos } from './data';
+import { estadios, grupos, jogos } from './data';
 import { defineStore } from 'pinia';
 export const wc_store = defineStore('worldcup', {
   state() {
     return {
-      times: times,
       estadios: estadios,
       grupos: grupos,
-      jogos: jogos,
-      logado: false
+      jogos: jogos
     }
   },
   getters: {
@@ -20,7 +18,6 @@ export const wc_store = defineStore('worldcup', {
     resgatar_localstorage(){
       this.$state = JSON.parse(localStorage.getItem("worldcup2022"));
       this.dados_resgatados = true;
-      console.log(this.$state);
     },
     salvar_localstorage() {
       const dados = this.$state;
@@ -44,11 +41,20 @@ export const wc_store = defineStore('worldcup', {
       }
       return time2.pontos - time1.pontos;
     },
-    ordenar(){
-      this.times.sort(this.comparacao);
+    /* 
+      Ordena os times do grupo do time que jogou.
+    */
+    ordenar(group_id){
+      let grupo = this.grupos.filter((grupo) => grupo.id === group_id)[0];
+      grupo.times.sort(this.comparacao);
     },
-    calcular_pontuacao() {
-      for(let time of this.times){
+    /* 
+      Calcula as pontuações dos times do grupo do time que jogou.
+    */
+    calcular_pontuacao(group_id) {
+      let group = this.grupos.filter((grupo) => grupo.id === group_id)[0];
+
+      for(let time of group.times){
         const jogos_time = this.jogos.filter((jogo)=> (jogo.time1.sigla === time.sigla || jogo.time2.sigla === time.sigla) && jogo.concluido);
 
         // console.log(time);
@@ -95,16 +101,13 @@ export const wc_store = defineStore('worldcup', {
         time.draw = parseInt(draw);
         time.defeat = parseInt(defeat);
       }
-      /*
-        Para cada time, buscar os seus jogos concluido e calcular os atributos
-      */
     },
-    alterar_jogo(jogo_alterado) {
+    alterar_jogo(jogo_alterado){
       let jogo = this.jogos.filter((jogo) => jogo.id === jogo_alterado.id);
       jogo = jogo_alterado;
       jogo.concluido = true;
-      this.calcular_pontuacao();
-      this.ordenar();
+      this.calcular_pontuacao(jogo.time1.grupo);
+      this.ordenar(jogo.time1.grupo);
       this.salvar_localstorage();
     }
   }
