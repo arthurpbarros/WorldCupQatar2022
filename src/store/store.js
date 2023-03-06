@@ -5,11 +5,12 @@ export const wc_store = defineStore('worldcup', {
     return {
       estadios: estadios,
       grupos: grupos,
-      jogos: jogos
+      jogos: jogos,
+      logado: false
     }
   },
   getters: {
-
+    
   },
   actions: {
     existe_localstorage(){

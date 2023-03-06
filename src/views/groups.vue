@@ -20,7 +20,7 @@ export default {
         <font-awesome-icon icon="fa-solid fa-arrow-left" />
       </div>
       <div class="bg-red-900 py-3">
-        <h1 class="text-white font-bold"> PRIMEIRA FASE </h1>
+        <h1 class="text-white font-bold"> FASE DE GRUPOS </h1>
       </div>
       <div class="bg-red-900 text-white font-bold py-3 hover:text-gray-300 text-2xl">
         <font-awesome-icon icon="fa-solid fa-arrow-right" />

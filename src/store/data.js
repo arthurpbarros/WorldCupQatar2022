@@ -15,7 +15,7 @@ const times = [
     { sigla: "FRA", nome: "FRANÇA", img: "fr", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'D', wins: 0, draw: 0, defeat: 0 },
     { sigla: "AUS", nome: "AUSTRÁLIA", img: "au", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'D', wins: 0, draw: 0, defeat: 0 },
     { sigla: "DIN", nome: "DINAMARCA", img: "dk", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'D', wins: 0, draw: 0, defeat: 0 },
-    { sigla: "TUN", nome: "TUNÍSIA", img: "tn", pontos: 0, goals_scored: 0, goaconsolels_against: 0, grupo: 'D', wins: 0, draw: 0, defeat: 0 },
+    { sigla: "TUN", nome: "TUNÍSIA", img: "tn", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'D', wins: 0, draw: 0, defeat: 0 },
     { sigla: "ESP", nome: "ESPANHA", img: "es", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'E', wins: 0, draw: 0, defeat: 0 },
     { sigla: "CRI", nome: "COSTA RICA", img: "cr", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'E', wins: 0, draw: 0, defeat: 0 },
     { sigla: "ALE", nome: "ALEMANHA", img: "de", pontos: 0, goals_scored: 0, goals_against: 0, grupo: 'E', wins: 0, draw: 0, defeat: 0 },
@@ -100,7 +100,7 @@ const times = [
     { id: 44, time1: times[30], time2: times[29], placar1: '', placar2: '', data: "28/11/2022", hora: "10:00", local: estadios[4], concluido: false, rodada: 2 },
     { id: 45, time1: times[28], time2: times[31], placar1: '', placar2: '', data: "28/11/2022", hora: "16:00", local: estadios[7], concluido: false, rodada: 2 },
     { id: 46, time1: times[30], time2: times[28], placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[4], concluido: false, rodada: 3 },
-    { id: 47, time1: times[29], time2: times[31], placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, rodada: 3 },
+    { id: 47, time1: times[29], time2: times[31], placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, rodada: 3 }, 
   ];
   
   const grupos = [

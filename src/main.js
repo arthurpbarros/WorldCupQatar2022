@@ -29,7 +29,9 @@ const router = createRouter({
 
 router.beforeEach((to,from) => {
   const store = wc_store();
-  // console.log(from.name, to.name);
+  if(store.existe_localstorage()){
+    store.resgatar_localstorage();
+  }
 });
 
 

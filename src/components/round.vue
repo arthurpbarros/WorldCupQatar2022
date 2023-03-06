@@ -61,7 +61,7 @@ export default {
       </div>
     </div>
     <div class="gap-4 flex flex-col">
-      <div class="bg-white rounded-lg shadow-sm" v-for="jogo in jogos_rodada" :key="jogo.id">
+      <div class="bg-white rounded-lg shadow-lg" :class="jogo.concluido? 'border border-red-800': ''" v-for="jogo in jogos_rodada" :key="jogo.id">
         <match :jogo="jogo" @mudanca_placar="alterarplacar"/>
       </div>
     </div>
