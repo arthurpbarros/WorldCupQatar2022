@@ -102,7 +102,7 @@ const times = [
     { id: 46, time1: times[30], time2: times[28], placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[4], concluido: false, rodada: 3 },
     { id: 47, time1: times[29], time2: times[31], placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, rodada: 3 }, 
   ];
-  
+
   const grupos = [
     { id: "A", times: times.slice(0, 4) },
     { id: "B", times: times.slice(4, 8) },
@@ -113,5 +113,25 @@ const times = [
     { id: "G", times: times.slice(24, 28) },
     { id: "H", times: times.slice(28, 32) }
   ];
+  
+  const jogos_finais = [
+    { id: 1, time1: 'A0', time2: 'B1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 2, time1: 'B0', time2: 'A1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 3, time1: 'C0', time2: 'D1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 4, time1: 'D0', time2: 'C1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 5, time1: 'E0', time2: 'F1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 6, time1: 'F0', time2: 'E1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 7, time1: 'G0', time2: 'H1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
+    { id: 8, time1: 'H0', time2: 'G1', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1 },
 
-  export {estadios, grupos, jogos};
+    { id: 9, time1: 'O1', time2: 'O2', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2 },
+    { id: 10, time1: 'O3', time2: 'O4', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2 },
+    { id: 11, time1: 'O5', time2: 'O6', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2 },
+    { id: 12, time1: 'O7', time2: 'O8', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2 },
+
+    { id: 13, time1: 'Q1', time2: 'Q2', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3 },
+    { id: 14, time1: 'Q3', time2: 'Q4', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3 },
+  ];
+  
+
+  export {estadios, grupos, jogos, jogos_finais};

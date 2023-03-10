@@ -1,5 +1,4 @@
 <script>
-import { jogos } from '../store/data';
 import { wc_store } from '../store/store';
 import match from './match.vue';
 export default {
@@ -7,7 +6,7 @@ export default {
     match
   },
   props: ['jogos_grupo','id_grupo'],
-  emits: ['mudanca_placar'],
+  emits: ['mudanca_placar','cancelar_placar'],
   setup() {
     const store = wc_store();
     return {
@@ -33,10 +32,13 @@ export default {
         this.rodada_atual -= 1;
       }
     },
-    alterarplacar(jogo_dado) {
+    alterar_placar(jogo_dado) {
       if (!isNaN(parseInt(jogo_dado.placar1)) && !isNaN(parseInt(jogo_dado.placar2))) {
         this.store.alterar_jogo(jogo_dado);
       }
+    },
+    cancelar_placar(jogo_dado){
+      this.store.cancelar_jogo(jogo_dado);
     }
   },
   computed: {
@@ -62,7 +64,7 @@ export default {
     </div>
     <div class="gap-4 flex flex-col">
       <div class="bg-white rounded-lg shadow-lg" :class="jogo.concluido? 'border border-red-800': ''" v-for="jogo in jogos_rodada" :key="jogo.id">
-        <match :jogo="jogo" @mudanca_placar="alterarplacar"/>
+        <match :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar"/>
       </div>
     </div>
   </div>

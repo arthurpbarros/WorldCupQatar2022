@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, watch } from 'vue'
 import { createPinia } from 'pinia'
 import { wc_store } from './store/store'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -28,12 +28,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to,from) => {
-  const store = wc_store();
-  if(store.existe_localstorage()){
-    store.resgatar_localstorage();
-  }
+  
 });
-
 
 app.use(router);
 app.use(pinia);

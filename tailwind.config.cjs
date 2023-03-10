@@ -13,6 +13,8 @@ module.exports = {
       },
       screens: {
         'lg': '1200px',
+        'tall': {'raw': '(max-height: 900px)'},
+        'to_align_round': {'max': '800px'}
       }
     },
     // screens: {
