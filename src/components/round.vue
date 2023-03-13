@@ -6,7 +6,6 @@ export default {
     match
   },
   props: ['jogos_grupo','id_grupo'],
-  emits: ['mudanca_placar','cancelar_placar'],
   setup() {
     const store = wc_store();
     return {

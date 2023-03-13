@@ -19,7 +19,6 @@ export default {
       this.$router.push({name: "groups"});
     },
     resgatar_dados(){
-      this.store.resgatar_localstorage();
       this.$router.push({name: "groups"});
     }
   }

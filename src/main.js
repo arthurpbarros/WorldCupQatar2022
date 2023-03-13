@@ -27,6 +27,16 @@ const router = createRouter({
   routes
 });
 
+
+watch(
+  pinia.state,
+  (state) => {
+    // persist the whole state to the local storage whenever it changes
+    localStorage.setItem('piniaState', JSON.stringify(state))
+  },
+  { deep: true }
+);
+
 router.beforeEach((to,from) => {
   
 });

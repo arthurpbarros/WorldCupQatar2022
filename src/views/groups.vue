@@ -1,10 +1,11 @@
 <script>
 import { wc_store } from '../store/store.js';
 import round from '../components/round.vue';
-import phase from '../components/phase.vue';
+import phase16 from '../components/phase_of_16.vue';
+import phase8 from '../components/phase_of_8.vue';
 export default {
   components: {
-    round, phase
+    round, phase16, phase8
   },
   setup() {
     const store = wc_store();
@@ -17,24 +18,29 @@ export default {
       fase_max: 5,
       fase_min: 0,
       fase_atual: 0,
-      fases: ['FASE DE GRUPOS','OITAVAS DE FINAL','QUARTAS DE FINAL','SEMIFINAL','TERCEIRO LUGAR','FINAL']
+      fases: ['FASE DE GRUPOS','OITAVAS DE FINAL','QUARTAS DE FINAL','SEMIFINAL','TERCEIRO LUGAR','FINAL'],
+      store: this.store
     }
   },
   methods: {
     proxima_fase(){
       this.fase_atual = this.fase_atual < this.fase_max ? this.fase_atual+1 : this.fase_atual;
-      console.log("mudou "+this.fase_atual);
     },
     fase_anterior(){
       this.fase_atual = this.fase_atual > this.fase_min ? this.fase_atual-1 : this.fase_atual;
-      console.log("mudou "+this.fase_atual);
     },
   },
   computed: {
     jogos_fase(){
-      return this.store.jogos_finais.filter((jogo) => jogo.fase === this.fase_atual);
+      return JSON.parse(JSON.stringify(this.store.jogos_finais.filter((jogo) => jogo.fase === this.fase_atual))) ;
+    },
+    oitavas_final(){
+      return JSON.parse(JSON.stringify(this.store.jogos_finais.filter((jogo) => jogo.fase === 1)));
+    },
+    quartas_final(){
+      return  JSON.parse(JSON.stringify(this.store.jogos_finais.filter((jogo) => jogo.fase === 2)));
     }
-  }
+  },
 }
 </script>
 <template>
@@ -84,9 +90,14 @@ export default {
         <round :jogos_grupo="store.jogos.filter((jogo) => jogo.time1.grupo === group.id)" :id_grupo="group.id"/>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else>
+    <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===1">
       <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
-        <phase :fase="fase_atual" :jogos_fase="jogos_fase"  />
+        <phase16 :fase="fase_atual" :key="fase_atual"/>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===2">
+      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+        <phase8 :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
   </div>

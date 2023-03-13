@@ -2,8 +2,8 @@ import { estadios, grupos, jogos, jogos_finais } from './data';
 import { defineStore } from 'pinia';
 export const wc_store = defineStore('worldcup', {
   state() {
-    if (localStorage.getItem("worldcup2022") !== null) {
-      return JSON.parse(localStorage.getItem("worldcup2022"));
+    if (localStorage.getItem("piniaState") !== null) {
+      return JSON.parse(localStorage.getItem("piniaState")).worldcup;
     }
     return {
       estadios: estadios,
@@ -17,15 +17,7 @@ export const wc_store = defineStore('worldcup', {
   },
   actions: {
     existe_localstorage() {
-      return localStorage.getItem("worldcup2022") === null ? false : true;
-    },
-    resgatar_localstorage() {
-      this.$state = JSON.parse(localStorage.getItem("worldcup2022"));
-      this.dados_resgatados = true;
-    },
-    salvar_localstorage() {
-      const dados = this.$state;
-      localStorage.setItem("worldcup2022", JSON.stringify(dados));
+      return localStorage.getItem("pliniaState") === null ? false : true;
     },
     /*
       Função para definir os critérios de ordenação do sort()
@@ -114,7 +106,6 @@ export const wc_store = defineStore('worldcup', {
       jogo.concluido = true;
       this.calcular_pontuacao(jogo.time1.grupo);
       this.ordenar(jogo.time1.grupo);
-      this.salvar_localstorage();
     },
     cancelar_jogo(jogo_cancelado) {
       let jogo = this.jogos.filter((jogo) => jogo.id === jogo_cancelado.id)[0];
@@ -123,7 +114,23 @@ export const wc_store = defineStore('worldcup', {
       jogo.concluido = false;
       this.calcular_pontuacao(jogo.time1.grupo);
       this.ordenar(jogo.time1.grupo);
-      this.salvar_localstorage();
+    },
+    alterar_jogo_fases_finais(jogo_alterado){
+      let jogo = this.jogos_finais.filter((jogo) => jogo.id === jogo_alterado.id)[0];
+      jogo = jogo_alterado;
+      jogo.concluido = true;
+    },
+    cancelar_jogo_fases_finais(jogo_cancelado) {
+      let jogo = this.jogos_finais.filter((jogo) => jogo.id === jogo_cancelado.id)[0];
+      jogo.placar1 = "";
+      jogo.placar2 = "";
+      jogo.concluido = false;
+    },
+    vencedor_jogo_fases_finais(jogo){
+      if(jogo.concluido){
+        return jogo.placar1 >= jogo.placar2? jogo.time1 : jogo.time2;
+      }
+      return false;
     }
   }
 });
