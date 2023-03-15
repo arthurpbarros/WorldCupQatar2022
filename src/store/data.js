@@ -115,22 +115,22 @@ const times = [
   ];
   
   const jogos_finais = [
-    { id: 1, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'A0', ref2: 'B1' },
-    { id: 2, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'B0', ref2: 'A1' },
-    { id: 3, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'C0', ref2: 'D1' },
-    { id: 4, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'D0', ref2: 'C1' },
-    { id: 5, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'E0', ref2: 'F1' },
-    { id: 6, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'F0', ref2: 'E1' },
-    { id: 7, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'G0', ref2: 'H1' },
-    { id: 8, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'H0', ref2: 'G1' },
+    { id: 1, time1: {}, time2: {}, placar1: '', placar2: '', data: "03/12/2022", hora: "12:00", local: estadios[6], concluido: false, fase: 1, ref1: 'A0', ref2: 'B1', penalti1: '', penalti2: '' },
+    { id: 2, time1: {}, time2: {}, placar1: '', placar2: '', data: "04/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 1, ref1: 'B0', ref2: 'A1', penalti1: '', penalti2: '' },
+    { id: 3, time1: {}, time2: {}, placar1: '', placar2: '', data: "03/12/2022", hora: "16:00", local: estadios[3], concluido: false, fase: 1, ref1: 'C0', ref2: 'D1', penalti1: '', penalti2: '' },
+    { id: 4, time1: {}, time2: {}, placar1: '', placar2: '', data: "04/12/2022", hora: "12:00", local: estadios[0], concluido: false, fase: 1, ref1: 'D0', ref2: 'C1', penalti1: '', penalti2: '' },
+    { id: 5, time1: {}, time2: {}, placar1: '', placar2: '', data: "05/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 1, ref1: 'E0', ref2: 'F1', penalti1: '', penalti2: '' },
+    { id: 6, time1: {}, time2: {}, placar1: '', placar2: '', data: "06/12/2022", hora: "12:00", local: estadios[4], concluido: false, fase: 1, ref1: 'F0', ref2: 'E1', penalti1: '', penalti2: '' },
+    { id: 7, time1: {}, time2: {}, placar1: '', placar2: '', data: "05/12/2022", hora: "16:00", local: estadios[5], concluido: false, fase: 1, ref1: 'G0', ref2: 'H1', penalti1: '', penalti2: '' },
+    { id: 8, time1: {}, time2: {}, placar1: '', placar2: '', data: "06/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 1, ref1: 'H0', ref2: 'G1', penalti1: '', penalti2: '' },
 
-    { id: 9, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2, ref1:1, ref2:2},
-    { id: 10, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2, ref1:3, ref2:4 },
-    { id: 11, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2, ref1:5, ref2:6 },
-    { id: 12, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 2, ref1:7, ref2:8 },
+    { id: 9 , time1: {}, time2: {}, placar1: '', placar2: '', data: "09/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 2, ref1:1, ref2:3, penalti1: '', penalti2: '' },
+    { id: 10, time1: {}, time2: {}, placar1: '', placar2: '', data: "09/12/2022", hora: "12:00", local: estadios[4], concluido: false, fase: 2, ref1:5, ref2:7, penalti1: '', penalti2: '' },
+    { id: 11, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 2, ref1:2, ref2:4, penalti1: '', penalti2: '' },
+    { id: 12, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "12:00", local: estadios[0], concluido: false, fase: 2, ref1:6, ref2:8, penalti1: '', penalti2: '' },
 
-    { id: 13, time1: 'Q1', time2: 'Q2', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3 },
-    { id: 14, time1: 'Q3', time2: 'Q4', placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3 },
+    { id: 13, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:9, ref2:10, penalti1: '', penalti2: '' },
+    { id: 14, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:11, ref2:12, penalti1: '', penalti2: '' },
   ];
   
 
