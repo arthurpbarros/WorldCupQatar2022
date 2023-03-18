@@ -142,6 +142,21 @@ export const wc_store = defineStore('worldcup', {
         return false;
       }
       return false;
+    },
+    perdedor_semifinal(jogo){
+      if(jogo.concluido){
+        if (jogo.placar1 > jogo.placar2){
+          return jogo.time2;
+        }else if(jogo.placar1 < jogo.placar2){
+          return jogo.time1;
+        }else if(jogo.penalti1 > jogo.penalti2){
+          return jogo.time2;
+        }else if(jogo.penalti1 < jogo.penalti2){
+          return jogo.time1;
+        }
+        return false;
+      }
+      return false;
     }
   }
 });
