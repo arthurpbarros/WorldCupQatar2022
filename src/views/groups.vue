@@ -3,9 +3,11 @@ import { wc_store } from '../store/store.js';
 import round from '../components/round.vue';
 import phase16 from '../components/phase_of_16.vue';
 import phase8 from '../components/phase_of_8.vue';
+import semifinals from '../components/semifinals.vue';
+import finals from '../components/finals.vue';
 export default {
   components: {
-    round, phase16, phase8
+    round, phase16, phase8, semifinals, finals
   },
   setup() {
     const store = wc_store();
@@ -72,10 +74,10 @@ export default {
             <th class="border px-4 py-4 text-primary"> GS </th>
             <th class="border px-4 py-4 text-primary"> GA </th>
           </tr>
-          <tr :class="index < 2 ? 'bg-green-50' : ''" v-for="(time, index) in group.times">
-            <td class="border px-4 py-4 font-bold" :class="index < 2 ? 'text-green-700' : 'text-gray-700'"> {{ index + 1
+          <tr :class="index < 2 ? 'bg-green-100' : ''" v-for="(time, index) in group.times">
+            <td class="border px-4 py-4 font-bold" :class="index < 2 ? 'text-green-800' : 'text-gray-700'"> {{ index + 1
             }} </td>
-            <td class="border px-4 py-4"> {{ time.nome }} </td>
+            <td class="border px-4 py-4" :class="index < 2 ? 'text-green-800' : ''"> {{ time.nome }} </td>
             <td class="border px-4 py-4"> {{ time.pontos }} </td>
             <td class="border px-4 py-4"> {{ time.wins }} </td>
             <td class="border px-4 py-4"> {{ time.draw }} </td>
@@ -98,6 +100,16 @@ export default {
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===2">
       <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
         <phase8 :fase="fase_atual" :key="fase_atual"/>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===3">
+      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+        <semifinals :fase="fase_atual" :key="fase_atual"/>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else>
+      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+        <finals :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
   </div>

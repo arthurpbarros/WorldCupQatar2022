@@ -1,9 +1,9 @@
 <script>
 import { wc_store } from '../store/store';
-import confront16 from './confront_of_16.vue';
+import confront from './confront_of_16.vue';
 export default {
   components: {
-    confront16
+    confront
   },
   setup() {
     const store = wc_store();
@@ -35,11 +35,11 @@ export default {
 </script>
 <template>
   <div class="w-full">
-    <div class="flex flex-col justify-center gap-4 w-full min-h-screen tall:mt-8">
-      <div class="bg-white rounded-lg shadow-lg" :class="jogo.concluido ? 'border border-red-800' : ''"
+    <div class="flex flex-col justify-center gap-4 w-full min-h-screen mt-8">
+      <div class="bg-white rounded-lg shadow" :class="jogo.concluido? 'shadow-primary': ''"
         v-for="jogo in jogos_finais">
         <div>
-          <confront16 :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar" :key="'oitavas'+jogo.id"/>
+          <confront :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar" :key="'oitavas'+jogo.id"/>
         </div>
       </div>
     </div>

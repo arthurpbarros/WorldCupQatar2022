@@ -14,7 +14,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.dados_jogo.time1);
+    // console.log(this.dados_jogo.time1);
     if (Object.keys(this.dados_jogo.time1).length === 0 && Object.keys(this.dados_jogo.time2).length === 0) {
       let time1 = this.dados_jogo.ref1;
       let elementos = time1.split('');
@@ -69,9 +69,9 @@ export default {
 }
 </script>
 <template>
-  <div class="text-center flex flex-row mt-3">
+  <div class="text-center flex flex-row mt-3" :class="dados_jogo.concluido? 'text-primary':''">
     <p class="w-1/3">{{ dados_jogo.time1.nome }}</p>
-    <div class="w-1/3">
+    <div class="w-1/3 text-black font-bold">
       <input type="number" min="0" max="20" class="w-2/5 border-2 border-gray-200 rounded-lg text-center"
         v-model="dados_jogo.placar1" v-on:change="mudar_placar" />
       <span class="w-1/5"> X </span>
@@ -79,6 +79,21 @@ export default {
         v-model="dados_jogo.placar2" v-on:change="mudar_placar"/>
     </div>
     <p class="w-1/3">{{ dados_jogo.time2.nome }}</p>
+  </div>
+
+  <div v-if="dados_jogo.concluido && dados_jogo.placar1 === dados_jogo.placar2">
+    <div class="text-center text-xs flex flex-col mt-2">
+      PÊNALTIS
+    </div>
+    <div class="text-center flex flex-row" :class="dados_jogo.concluido? 'text-primary':''" >
+      <div class="w-1/3 text-gray-500 font-bold mx-auto">
+        <input type="number" min="0" max="20" class="w-2/5 border-2 border-gray-200 rounded-lg text-center"
+          v-model="dados_jogo.penalti1" v-on:change="mudar_placar" />
+        <span class="w-1/5"> X </span>
+        <input type="number" min="0" max="20" class="w-2/5 border-2 border-gray-200 rounded-lg text-center"
+          v-model="dados_jogo.penalti2" v-on:change="mudar_placar"/>
+      </div>
+    </div>
   </div>
 
   <div class="text-center my-2 text-xs flex flex-col">

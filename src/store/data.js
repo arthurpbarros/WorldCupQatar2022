@@ -123,14 +123,18 @@ const times = [
     { id: 6, time1: {}, time2: {}, placar1: '', placar2: '', data: "06/12/2022", hora: "12:00", local: estadios[4], concluido: false, fase: 1, ref1: 'F0', ref2: 'E1', penalti1: '', penalti2: '' },
     { id: 7, time1: {}, time2: {}, placar1: '', placar2: '', data: "05/12/2022", hora: "16:00", local: estadios[5], concluido: false, fase: 1, ref1: 'G0', ref2: 'H1', penalti1: '', penalti2: '' },
     { id: 8, time1: {}, time2: {}, placar1: '', placar2: '', data: "06/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 1, ref1: 'H0', ref2: 'G1', penalti1: '', penalti2: '' },
-
+    // QUARTERFINALS
     { id: 9 , time1: {}, time2: {}, placar1: '', placar2: '', data: "09/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 2, ref1:1, ref2:3, penalti1: '', penalti2: '' },
     { id: 10, time1: {}, time2: {}, placar1: '', placar2: '', data: "09/12/2022", hora: "12:00", local: estadios[4], concluido: false, fase: 2, ref1:5, ref2:7, penalti1: '', penalti2: '' },
     { id: 11, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 2, ref1:2, ref2:4, penalti1: '', penalti2: '' },
     { id: 12, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "12:00", local: estadios[0], concluido: false, fase: 2, ref1:6, ref2:8, penalti1: '', penalti2: '' },
-
+    // SEMIFINALS
     { id: 13, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:9, ref2:10, penalti1: '', penalti2: '' },
     { id: 14, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:11, ref2:12, penalti1: '', penalti2: '' },
+    // FINALS
+    { id: 15, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 4, ref1:13, ref2:14, penalti1: '', penalti2: '' },
+
+
   ];
   
 

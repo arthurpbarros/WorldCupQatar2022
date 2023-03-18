@@ -17,7 +17,7 @@ export const wc_store = defineStore('worldcup', {
   },
   actions: {
     existe_localstorage() {
-      return localStorage.getItem("pliniaState") === null ? false : true;
+      return localStorage.getItem("piniaState") === null ? false : true;
     },
     /*
       Função para definir os critérios de ordenação do sort()
@@ -124,11 +124,22 @@ export const wc_store = defineStore('worldcup', {
       let jogo = this.jogos_finais.filter((jogo) => jogo.id === jogo_cancelado.id)[0];
       jogo.placar1 = "";
       jogo.placar2 = "";
+      jogo.penalti1 = "";
+      jogo.penalti2 = "";
       jogo.concluido = false;
     },
     vencedor_jogo_fases_finais(jogo){
       if(jogo.concluido){
-        return jogo.placar1 >= jogo.placar2? jogo.time1 : jogo.time2;
+        if (jogo.placar1 > jogo.placar2){
+          return jogo.time1;
+        }else if(jogo.placar1 < jogo.placar2){
+          return jogo.time2;
+        }else if(jogo.penalti1 > jogo.penalti2){
+          return jogo.time1;
+        }else if(jogo.penalti1 < jogo.penalti2){
+          return jogo.time2;
+        }
+        return false;
       }
       return false;
     }
