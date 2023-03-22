@@ -129,12 +129,12 @@ const times = [
     { id: 11, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 2, ref1:2, ref2:4, penalti1: '', penalti2: '' },
     { id: 12, time1: {}, time2: {}, placar1: '', placar2: '', data: "10/12/2022", hora: "12:00", local: estadios[0], concluido: false, fase: 2, ref1:6, ref2:8, penalti1: '', penalti2: '' },
     // SEMIFINALS
-    { id: 13, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:9, ref2:10, penalti1: '', penalti2: '' },
-    { id: 14, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 3, ref1:11, ref2:12, penalti1: '', penalti2: '' },
+    { id: 13, time1: {}, time2: {}, placar1: '', placar2: '', data: "13/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 3, ref1:9, ref2:10, penalti1: '', penalti2: '' },
+    { id: 14, time1: {}, time2: {}, placar1: '', placar2: '', data: "14/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 3, ref1:11, ref2:12, penalti1: '', penalti2: '' },
     // FINALS
-    { id: 15, time1: {}, time2: {}, placar1: '', placar2: '', data: "02/12/2022", hora: "12:00", local: estadios[1], concluido: false, fase: 4, ref1:13, ref2:14, penalti1: '', penalti2: '' },
-
-
+    { id: 15, time1: {}, time2: {}, placar1: '', placar2: '', data: "18/12/2022", hora: "12:00", local: estadios[7], concluido: false, fase: 4, ref1:13, ref2:14, penalti1: '', penalti2: '' },
+    // THIRD PLACE
+    { id: 16, time1: {}, time2: {}, placar1: '', placar2: '', data: "17/12/2022", hora: "12:00", local: estadios[6], concluido: false, fase: 5, ref1:13, ref2:14, penalti1: '', penalti2: '' },
   ];
   
 
