@@ -131,10 +131,10 @@ const times = [
     // SEMIFINALS
     { id: 13, time1: {}, time2: {}, placar1: '', placar2: '', data: "13/12/2022", hora: "16:00", local: estadios[7], concluido: false, fase: 3, ref1:9, ref2:10, penalti1: '', penalti2: '' },
     { id: 14, time1: {}, time2: {}, placar1: '', placar2: '', data: "14/12/2022", hora: "16:00", local: estadios[2], concluido: false, fase: 3, ref1:11, ref2:12, penalti1: '', penalti2: '' },
-    // FINALS
-    { id: 15, time1: {}, time2: {}, placar1: '', placar2: '', data: "18/12/2022", hora: "12:00", local: estadios[7], concluido: false, fase: 4, ref1:13, ref2:14, penalti1: '', penalti2: '' },
     // THIRD PLACE
-    { id: 16, time1: {}, time2: {}, placar1: '', placar2: '', data: "17/12/2022", hora: "12:00", local: estadios[6], concluido: false, fase: 5, ref1:13, ref2:14, penalti1: '', penalti2: '' },
+    { id: 15, time1: {}, time2: {}, placar1: '', placar2: '', data: "17/12/2022", hora: "12:00", local: estadios[6], concluido: false, fase: 5, ref1:13, ref2:14, penalti1: '', penalti2: '' },
+    // FINALS
+    { id: 16, time1: {}, time2: {}, placar1: '', placar2: '', data: "18/12/2022", hora: "12:00", local: estadios[7], concluido: false, fase: 4, ref1:13, ref2:14, penalti1: '', penalti2: '' },
   ];
   
 

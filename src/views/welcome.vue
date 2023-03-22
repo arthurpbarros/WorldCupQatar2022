@@ -1,36 +1,50 @@
-
 <script>
-import logo from '../assets/worldcup2022.svg';
-import { wc_store } from '../store/store.js';
+import logo from "../assets/worldcup2022.svg";
+import { wc_store } from "../store/store.js";
 
 export default {
-  setup(){
+  setup() {
     const store = wc_store();
-    return {store};
+    return { store };
   },
-  data(){
+  data() {
     return {
       logo: logo,
-      dados_salvos_localstorage: this.store.existe_localstorage()
+      existe_dados_localstorage: this.store.existe_localstorage(),
     };
   },
   methods: {
-    iniciar(){
-      this.$router.push({name: "groups"});
+    iniciar() {
+      this.$router.push({ name: "groups" });
     },
-    resgatar_dados(){
-      this.$router.push({name: "groups"});
-    }
-  }
+    resgatar_dados() {
+      this.$router.push({ name: "groups" });
+    },
+  },
+  mounted() {
+    console.log(this.existe_dados_localstorage);
+  },
 };
 </script>
 <template>
-  <div id="main">  
+  <div id="main">
     <div class="options_user font-sans">
-      <img :src="logo" alt="">
-      <button class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-900 hover:text-white" @click="iniciar"> INICIAR PROGRESSO </button>
-      <!-- <button class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-900 hover:text-white">  </button> -->
-      <button v-show="dados_salvos_localstorage" @click="resgatar_dados" class="outline outline-red-900 rounded px-2 py-2 text-red-900 hover:bg-red-900 hover:text-white"> CARREGAR PROGRESSO </button>
+      <img :src="logo" alt="" />
+      <button
+        @click="iniciar"
+        class="outline outline-red-900 rounded px-2 py-2 mb-2 text-red-900 hover:bg-red-700 hover:outline-red-700 hover:text-white"
+        :class="!existe_dados_localstorage ? 'bg-red-900 text-white' : ''"
+      >
+        INICIAR PROGRESSO
+      </button>
+      <button
+        v-show="existe_dados_localstorage"
+        @click="resgatar_dados"
+        :class="existe_dados_localstorage ? 'bg-red-900' : ''"
+        class="outline outline-red-900 rounded px-2 py-2 text-white hover:bg-red-700 hover:outline-red-700 hover:text-white"
+      >
+        CARREGAR PROGRESSO
+      </button>
     </div>
   </div>
 </template>
@@ -38,7 +52,11 @@ export default {
 <style scoped>
 #main {
   background: rgb(207, 206, 206);
-  background: radial-gradient(circle, rgba(207, 206, 206, 1) 27%, rgba(133, 133, 133, 1) 68%);
+  background: radial-gradient(
+    circle,
+    rgba(207, 206, 206, 1) 27%,
+    rgba(133, 133, 133, 1) 68%
+  );
 
   display: flex;
   align-items: center;
@@ -46,7 +64,7 @@ export default {
   min-height: 100vh;
 }
 
-.options_user{
+.options_user {
   display: flex;
   flex-direction: column;
   align-items: center;

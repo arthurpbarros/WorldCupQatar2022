@@ -1,9 +1,9 @@
 <script>
-import { wc_store } from '../store/store';
-import confront from './confront.vue';
+import { wc_store } from '../../store/store';
+import third_place_confront from '../confront_types/confront_third_place.vue';
 export default {
   components: {
-    confront
+    third_place_confront
   },
   setup() {
     const store = wc_store();
@@ -36,7 +36,7 @@ export default {
       <div class="bg-white rounded-lg shadow" :class="jogo.concluido? 'shadow-primary': ''"
         v-for="jogo in jogos_finais">
         <div>
-          <confront :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar" :key="jogo.id"/>
+          <third_place_confront :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar" :key="jogo.id"/>
         </div>
       </div>
     </div>

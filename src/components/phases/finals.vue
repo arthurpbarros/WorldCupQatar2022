@@ -1,6 +1,6 @@
 <script>
-import { wc_store } from '../store/store';
-import confront from './confront.vue';
+import { wc_store } from '../../store/store';
+import confront from '../confront_types/confront.vue';
 export default {
   components: {
     confront

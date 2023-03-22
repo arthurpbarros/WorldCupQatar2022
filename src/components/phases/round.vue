@@ -1,6 +1,6 @@
 <script>
-import { wc_store } from '../store/store';
-import match from './match.vue';
+import { wc_store } from '../../store/store';
+import match from '../confront_types/match.vue';
 export default {
   components: {
     match

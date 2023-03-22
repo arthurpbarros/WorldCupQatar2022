@@ -17,7 +17,7 @@ export const wc_store = defineStore('worldcup', {
   },
   actions: {
     existe_localstorage() {
-      return localStorage.getItem("piniaState") === null ? false : true;
+      return (localStorage.getItem("piniaState") !== null);
     },
     /*
       Função para definir os critérios de ordenação do sort()

@@ -1,5 +1,5 @@
 <script>
-import { wc_store } from '../store/store';
+import { wc_store } from '../../store/store';
 export default {
   props: ['jogo'],
   setup() {

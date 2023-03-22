@@ -1,5 +1,5 @@
 <script>
-import { wc_store } from '../store/store';
+import { wc_store } from '../../store/store';
 export default {
   props: ['jogo'],
   setup() {
@@ -19,19 +19,19 @@ export default {
     let time2 = this.dados_jogo.time2;
 
     if (Object.keys(time1).length === 0 && Object.keys(time2).length === 0) {
-      let oitava_final = this.store.jogos_finais.filter((oitava) => oitava.id === this.dados_jogo.ref1)[0];
-      let vencedor1 = this.store.vencedor_jogo_fases_finais(oitava_final);
-      oitava_final = this.store.jogos_finais.filter((oitava) => oitava.id === this.dados_jogo.ref2)[0];
-      let vencedor2 = this.store.vencedor_jogo_fases_finais(oitava_final);
+      let jogo_fase_final = this.store.jogos_finais.filter((jogo) => jogo.id === this.dados_jogo.ref1)[0];
+      let vencedor1 = this.store.vencedor_jogo_fases_finais(jogo_fase_final);
+      jogo_fase_final = this.store.jogos_finais.filter((jogo) => jogo.id === this.dados_jogo.ref2)[0];
+      let vencedor2 = this.store.vencedor_jogo_fases_finais(jogo_fase_final);
       if(vencedor1 !== false && vencedor2 !== false){
         this.dados_jogo.time1 = vencedor1;
         this.dados_jogo.time2 = vencedor2;
       }
     }else if(typeof (time1) === 'object' && typeof (time2) === 'object'){
-      let oitava_final = this.store.jogos_finais.filter((oitava) => oitava.id === this.dados_jogo.ref1)[0];
-      let vencedor1 = this.store.vencedor_jogo_fases_finais(oitava_final);
-      oitava_final = this.store.jogos_finais.filter((oitava) => oitava.id === this.dados_jogo.ref2)[0];
-      let vencedor2 = this.store.vencedor_jogo_fases_finais(oitava_final);
+      let jogo_fase_final = this.store.jogos_finais.filter((jogo) => jogo.id === this.dados_jogo.ref1)[0];
+      let vencedor1 = this.store.vencedor_jogo_fases_finais(jogo_fase_final);
+      jogo_fase_final = this.store.jogos_finais.filter((jogo) => jogo.id === this.dados_jogo.ref2)[0];
+      let vencedor2 = this.store.vencedor_jogo_fases_finais(jogo_fase_final);
       if(vencedor1 !== false && vencedor2 !== false){
         this.verificar_mudanca_times(vencedor1,vencedor2);
       }else{
