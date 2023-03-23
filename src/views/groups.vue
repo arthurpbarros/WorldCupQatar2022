@@ -62,18 +62,18 @@ export default {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 overflow-x-auto bg-gray-200"
       :class="group.id == 'A' ? 'pt-12' : 'pt-0'" v-for="group in store.grupos" :key="group.id" v-if="fase_atual===0">
       <div class="mx-auto">
-        <h2 class="text-white text-lg font-bold font-center text-center mt-5 rounded-lg"> GROUP {{ group.id }}</h2>
+        <h2 class="text-white text-lg font-bold font-center text-center mt-5 rounded-lg"> GRUPO {{ group.id }}</h2>
         <table class="table-auto border mb-5 bg-white text-sm text-center rounded-lg w-full">
           <tr class="">
             <th class="border px-4 py-4 text-primary"> POS </th>
-            <th class="border px-4 py-4 text-primary"> Country </th>
+            <th class="border px-4 py-4 text-primary"> País </th>
             <th class="border px-4 py-4 text-primary"> P </th>
-            <th class="border px-4 py-4 text-primary"> W </th>
+            <th class="border px-4 py-4 text-primary"> V </th>
+            <th class="border px-4 py-4 text-primary"> E </th>
             <th class="border px-4 py-4 text-primary"> D </th>
-            <th class="border px-4 py-4 text-primary"> L </th>
-            <th class="border px-4 py-4 text-primary"> GD </th>
-            <th class="border px-4 py-4 text-primary"> GS </th>
-            <th class="border px-4 py-4 text-primary"> GA </th>
+            <th class="border px-4 py-4 text-primary"> GP </th>
+            <th class="border px-4 py-4 text-primary"> GC </th>
+            <th class="border px-4 py-4 text-primary"> SG </th>
           </tr>
           <tr :class="index < 2 ?'bg-green-100 text-green-900' : ''" v-for="(time, index) in group.times">
             <td class="border px-4 py-4" :class="index < 2 ? 'font-bold' : 'text-gray-700'"> {{ index + 1
