@@ -1,6 +1,6 @@
 <script>
 import logo from "../assets/worldcup2022.svg";
-import { wc_store } from "../store/store.js";
+import { wc_store, existe_localstorage } from "../store/store.js";
 
 export default {
   setup() {
@@ -10,11 +10,14 @@ export default {
   data() {
     return {
       logo: logo,
-      existe_dados_localstorage: this.store.existe_localstorage(),
+      existe_dados_localstorage: existe_localstorage(),
     };
   },
   methods: {
     iniciar() {
+      if(existe_localstorage()){
+        this.store.limpar_localstorage();
+      }
       this.$router.push({ name: "groups" });
     },
     resgatar_dados() {

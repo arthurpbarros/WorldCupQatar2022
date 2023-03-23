@@ -1,6 +1,8 @@
 import { estadios, grupos, jogos, jogos_finais } from './data';
 import { defineStore } from 'pinia';
-export const wc_store = defineStore('worldcup', {
+
+//Store para armazenar os dados da aplicação
+const wc_store = defineStore('worldcup', {
   state() {
     if (localStorage.getItem("piniaState") !== null) {
       return JSON.parse(localStorage.getItem("piniaState")).worldcup;
@@ -16,11 +18,21 @@ export const wc_store = defineStore('worldcup', {
 
   },
   actions: {
-    existe_localstorage() {
-      return (localStorage.getItem("piniaState") !== null);
+    /*
+      @description: Função para redefine os dados salvos em localstorage para valores padrão
+    */
+    limpar_localstorage(){
+      this.state = {
+        estadios: estadios,
+        grupos: grupos,
+        jogos: jogos,
+        jogos_finais: jogos_finais,
+      };
     },
     /*
-      Função para definir os critérios de ordenação do sort()
+      @description: Função para definir os critérios de ordenação do sort()
+      @param (Object) time: Time a ser comparado
+      @param (Object) time: Time a ser comparado
     */
     comparacao(time1, time2) {
       if (time1.pontos === time2.pontos) {
@@ -41,22 +53,22 @@ export const wc_store = defineStore('worldcup', {
       return time2.pontos - time1.pontos;
     },
     /* 
-      Ordena os times do grupo do time que jogou.
+      @description: Ordena os times do grupo do time que jogou.
+      @param (int) group_id: Identificador do grupo que se deseja ordenar
     */
     ordenar(group_id) {
       let grupo = this.grupos.filter((grupo) => grupo.id === group_id)[0];
       grupo.times.sort(this.comparacao);
     },
     /* 
-      Calcula as pontuações dos times do grupo do time que jogou.
+      @description: Calcula as pontuações dos times do grupo do time que jogou.
+      @param (int) group_id: Identificador do grupo cujos times deseja-se ordenar
     */
     calcular_pontuacao(group_id) {
       let group = this.grupos.filter((grupo) => grupo.id === group_id)[0];
 
       for (let time of group.times) {
         const jogos_time = this.jogos.filter((jogo) => (jogo.time1.sigla === time.sigla || jogo.time2.sigla === time.sigla) && jogo.concluido);
-
-        // console.log(time);
         let pontos = 0;
         let goals_scored = 0;
         let goals_against = 0;
@@ -100,6 +112,10 @@ export const wc_store = defineStore('worldcup', {
         time.defeat = parseInt(defeat);
       }
     },
+    /*
+      @description: Salva dados de um jogo da fase de grupos
+      @param (Object) jogo_alterado: Jogo a ser salvo
+    */
     alterar_jogo(jogo_alterado) {
       let jogo = this.jogos.filter((jogo) => jogo.id === jogo_alterado.id)[0];
       jogo = jogo_alterado;
@@ -107,6 +123,10 @@ export const wc_store = defineStore('worldcup', {
       this.calcular_pontuacao(jogo.time1.grupo);
       this.ordenar(jogo.time1.grupo);
     },
+    /*
+      a fase de grupos
+      @param (Object) jogo_cancelado: Jogo a ser cancelado
+    */
     cancelar_jogo(jogo_cancelado) {
       let jogo = this.jogos.filter((jogo) => jogo.id === jogo_cancelado.id)[0];
       jogo.placar1 = "";
@@ -115,11 +135,19 @@ export const wc_store = defineStore('worldcup', {
       this.calcular_pontuacao(jogo.time1.grupo);
       this.ordenar(jogo.time1.grupo);
     },
+    /*
+      @description: Salva dados de um jogo das fases eliminatórias
+      @param (Object) jogo_alterado: Jogo a ser salvo
+    */
     alterar_jogo_fases_finais(jogo_alterado){
       let jogo = this.jogos_finais.filter((jogo) => jogo.id === jogo_alterado.id)[0];
       jogo = jogo_alterado;
       jogo.concluido = true;
     },
+    /*
+      @description: Modifica o placar e o status de um jogo das fases eliminatórias
+      @param (Object) jogo_cancelado: Jogo a ser cancelado
+    */
     cancelar_jogo_fases_finais(jogo_cancelado) {
       let jogo = this.jogos_finais.filter((jogo) => jogo.id === jogo_cancelado.id)[0];
       jogo.placar1 = "";
@@ -128,6 +156,10 @@ export const wc_store = defineStore('worldcup', {
       jogo.penalti2 = "";
       jogo.concluido = false;
     },
+    /*
+      @description: Retorna o vencedor de um jogo das fases eliminatórias ou false caso não haja vencedor
+      @param (Object) jogo: Jogo a ser verificado
+    */
     vencedor_jogo_fases_finais(jogo){
       if(jogo.concluido){
         if (jogo.placar1 > jogo.placar2){
@@ -143,6 +175,10 @@ export const wc_store = defineStore('worldcup', {
       }
       return false;
     },
+    /*
+      @description: Retorna o perdedor de um jogo das fase de semifinal
+      @param (Object) jogo: Jogo a ser verificado
+    */
     perdedor_semifinal(jogo){
       if(jogo.concluido){
         if (jogo.placar1 > jogo.placar2){
@@ -160,3 +196,12 @@ export const wc_store = defineStore('worldcup', {
     }
   }
 });
+
+/*
+  @description: Retorna true se os dados estão armazenados em localstorage
+*/
+function existe_localstorage() {
+  return (localStorage.getItem("piniaState") !== null);
+}
+
+export {wc_store, existe_localstorage};
