@@ -50,13 +50,13 @@ export default {
   <div class="extern">
     <div class="grid grid-cols-3 text-center fixed overflow-hidden w-full">
       <div class="bg-red-900 font-bold py-3 hover:text-gray-300 text-2xl" @click="fase_anterior" :class="fase_atual>fase_min? 'text-white': 'text-red-900'">
-        <font-awesome-icon icon="fa-solid fa-arrow-left" />
+        <font-awesome-icon icon="fa-solid fa-arrow-left" v-show="fase_atual>fase_min"/>
       </div>
       <div class="bg-red-900 py-3">
         <h1 class="text-white font-bold"> {{ fases[fase_atual] }} </h1>
       </div>
       <div class="bg-red-900 font-bold py-3 hover:text-gray-300 text-2xl" @click="proxima_fase"  :class="fase_atual<fase_max? 'text-white': 'text-red-900'">
-        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+        <font-awesome-icon icon="fa-solid fa-arrow-right" v-show="fase_atual<fase_max"/>
       </div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 overflow-x-auto bg-gray-200"
@@ -89,32 +89,32 @@ export default {
           </tr>
         </table>
       </div>
-      <div class="mx-auto rounded-lg flex flex-col justify-center">
+      <div class="mx-auto rounded-lg flex flex-col w-full sm:w-1/2 md:w-1/2 justify-center">
         <round :jogos_grupo="store.jogos.filter((jogo) => jogo.time1.grupo === group.id)" :id_grupo="group.id"/>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===1">
-      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+      <div class="mx-auto rounded-lg flex flex-col w-7/8 sm:w-1/2 mt-10">
         <phase16 :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===2">
-      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+      <div class="mx-auto rounded-lg flex flex-col w-7/8 sm:w-1/2 mt-10">
         <phase8 :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===3">
-      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+      <div class="mx-auto rounded-lg flex flex-col w-7/8 sm:w-1/2 mt-10">
         <semifinals :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else-if="fase_atual===4">
-      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+      <div class="mx-auto rounded-lg flex flex-col w-7/8 sm:w-1/2 mt-10">
         <third_place :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 bg-gray-200 h-full" v-else>
-      <div class="mx-auto rounded-lg flex flex-col justify-center mt-10">
+      <div class="mx-auto rounded-lg flex flex-col w-7/8 sm:w-1/2 mt-10">
         <finals :fase="fase_atual" :key="fase_atual"/>
       </div>
     </div>

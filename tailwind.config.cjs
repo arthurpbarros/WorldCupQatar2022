@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['"Open Sans"','Confortaa'],
+      'sans': ['Raleway'],
+      'local': ['Poppins']
     },
     extend: {
       colors: {
@@ -15,6 +16,15 @@ module.exports = {
         'lg': '1200px',
         'tall': {'raw': '(max-height: 900px)'},
         'to_align_round': {'max': '800px'}
+      },
+      width: {
+        '1/8': '12.5%',
+        '2/8': '25%',
+        '3/8': '37.5%',
+        '4/8': '50%',
+        '5/8': '62.5%',
+        '6/8': '75%',
+        '7/8': '87.5%'
       }
     },
     // screens: {
