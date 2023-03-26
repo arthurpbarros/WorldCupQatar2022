@@ -21,13 +21,11 @@ const wc_store = defineStore('worldcup', {
     /*
       @description: Função para redefine os dados salvos em localstorage para valores padrão
     */
-    limpar_localstorage(){
-      this.state = {
-        estadios: estadios,
-        grupos: grupos,
-        jogos: jogos,
-        jogos_finais: jogos_finais,
-      };
+    limpar_dados(){
+      this.estadios = estadios;
+      this.grupos = grupos;
+      this.jogos = jogos;
+      this.jogos_finais = jogos_finais;
     },
     /*
       @description: Função para definir os critérios de ordenação do sort()

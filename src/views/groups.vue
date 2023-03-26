@@ -48,7 +48,7 @@ export default {
 </script>
 <template>
   <div class="extern">
-    <div class="grid grid-cols-3 text-center fixed overflow-hidden w-full">
+    <div class="grid grid-cols-3 text-center fixed overflow-hidden w-full z-10">
       <div class="bg-red-900 font-bold py-3 hover:text-gray-300 text-2xl" @click="fase_anterior" :class="fase_atual>fase_min? 'text-white': 'text-red-900'">
         <font-awesome-icon icon="fa-solid fa-arrow-left" v-show="fase_atual>fase_min"/>
       </div>

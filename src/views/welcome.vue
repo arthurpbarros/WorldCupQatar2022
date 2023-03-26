@@ -16,7 +16,7 @@ export default {
   methods: {
     iniciar() {
       if(existe_localstorage()){
-        this.store.limpar_localstorage();
+        this.store.limpar_dados();
       }
       this.$router.push({ name: "groups" });
     },

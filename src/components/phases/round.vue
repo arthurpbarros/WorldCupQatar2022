@@ -62,7 +62,7 @@ export default {
       </div>
     </div>
     <div class="gap-4 flex flex-col">
-      <div class="bg-white rounded-lg shadow-lg hover:translate-x-2 hover:shadow-gray-400" :class="jogo.concluido? 'shadow-primary': ''" v-for="jogo in jogos_rodada" :key="jogo.id">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-gray-400" :class="jogo.concluido? 'shadow-primary': ''" v-for="jogo in jogos_rodada" :key="jogo.id">
         <match :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar"/>
       </div>
     </div>
