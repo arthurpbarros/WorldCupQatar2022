@@ -83,7 +83,7 @@ export default {
     <div class="text-center text-xs flex flex-col mt-2">
       PÊNALTIS
     </div>
-    <div class="text-center flex flex-row" :class="dados_jogo.concluido? 'text-primary':''" >
+    <div class="text-center flex flex-row text-sm" :class="dados_jogo.concluido? 'text-primary':''" >
       <div class="w-1/3 lg:w-1/5 text-gray-600 font-bold mx-auto font-local">
         <input type="number" min="0" max="20" class="w-2/5 border-2 border-gray-200 rounded-lg text-center"
           v-model="dados_jogo.penalti1" v-on:change="mudar_placar" />
@@ -94,8 +94,8 @@ export default {
     </div>
   </div>
 
-  <div class="text-center my-2 text-xs flex flex-col">
-    <div class="font-local font-bold">{{ dados_jogo.data }} às {{ dados_jogo.hora }}</div>
+  <div class="text-center my-2 text-xs flex flex-col ">
+    <div class="font-local font-bold text-gray-500">{{ dados_jogo.data }} às {{ dados_jogo.hora }}</div>
     <div class="uppercase text-red-700">{{ dados_jogo.local.nome }}</div>
     <div v-if="dados_jogo.concluido">
       <button class="bg-red-700 rounded p-2 text-white text-xs hover:bg-red-600" @click="cancelar_placar">

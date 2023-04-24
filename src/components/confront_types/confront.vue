@@ -90,7 +90,7 @@ export default {
   </div>
 
   <div class="text-center my-2 text-xs flex flex-col">
-    <div class="font-local font-bold">{{ dados_jogo.data }} às {{ dados_jogo.hora }}</div>
+    <div class="font-local font-bold text-gray-500">{{ dados_jogo.data }} às {{ dados_jogo.hora }}</div>
     <div class="uppercase text-red-700">{{ dados_jogo.local.nome }}</div>
     <div v-if="dados_jogo.concluido">
       <button class="bg-red-700 rounded p-2 text-white text-xs hover:bg-red-600" @click="cancelar_placar">
