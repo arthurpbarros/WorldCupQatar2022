@@ -1,16 +1,16 @@
 # WorldCupQatar2022
-Aplicação SPA para gerenciar placares, horários e jogos da Copa do Mundo do Qatar 2022. 
+Aplicação SPA para gerenciar, consultar horários e datas dos jogos da Copa do Mundo do Qatar 2022. 
 
-Entre suas funcionalidades estão: Cálculo da pontuação e classificação dos times nos grupos e o preenchimento automáticos de jogos eliminatórios. Os dados são armazenados localmente para guardar os dados dos jogos preenchidos pelo usuário.
+Entre suas funcionalidades estão: Cálculo da pontuação e classificação dos times nos grupos e o preenchimento automáticos de jogos eliminatórios, baseados nos jogos anteriores. Os dados dos jogos preenchidos pelo usuário são armazenados localmente.
 
 A aplicação está atuamente implantada no [Vercel](https://world-cup-qatar2022.vercel.app/)
 
 ## Capturas de Tela
-<div style="display: flex; flex-direction: row">
-  <img src="/screenshots/01.png" width=500/>
-  <img src="/screenshots/02.png" width=500/>
-  <img src="/screenshots/03.png" width=500/>
-  <img src="/screenshots/04.png" width=500/>
+<div style="display: flex; flex-direction: row; width: 100vw">
+  <img src="/screenshots/01.png">
+  <img src="/screenshots/02.png">
+  <img src="/screenshots/03.png">
+  <img src="/screenshots/04.png">
 </div>
 
 ## Requisitos
