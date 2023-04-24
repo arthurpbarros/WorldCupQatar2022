@@ -23,10 +23,7 @@ export default {
     resgatar_dados() {
       this.$router.push({ name: "groups" });
     },
-  },
-  mounted() {
-    console.log(this.existe_dados_localstorage);
-  },
+  }
 };
 </script>
 <template>
