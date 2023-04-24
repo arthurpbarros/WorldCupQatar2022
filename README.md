@@ -1,7 +1,33 @@
-# Vue 3 + Vite
+# WorldCupQatar2022
+Aplicação SPA para gerenciar placares, horários e jogos da Copa do Mundo do Qatar 2022. 
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Entre suas funcionalidades estão: Cálculo da pontuação e classificação dos times nos grupos e o preenchimento automáticos de jogos eliminatórios. Os dados são armazenados localmente para guardar os dados dos jogos preenchidos pelo usuário.
 
-## Recommended IDE Setup
+A aplicação está atuamente implantada no [Vercel](https://world-cup-qatar2022.vercel.app/)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Capturas de Tela
+<div style="display: flex; flex-direction: row">
+  <img src="/screenshots/01.png" width=500/>
+  <img src="/screenshots/02.png" width=500/>
+  <img src="/screenshots/03.png" width=500/>
+  <img src="/screenshots/04.png" width=500/>
+</div>
+
+## Requisitos
+- Node.JS versão 16 ou posterior
+
+## Instalação
+Dentro da pasta do projeto (WorldCupQatar2022), execute:
+
+``` npm install ``` (Instalação de dependências)
+
+``` npm run dev ``` (para rodar em modo de desenvolvimento)
+
+``` npm run build ``` (para gerar os arquivos para produção)
+
+## Tecnologias
+<div>
+<img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D"/>
+<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
+</div>
