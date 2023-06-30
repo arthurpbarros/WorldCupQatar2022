@@ -35,12 +35,10 @@ export default {
 </script>
 <template>
   <div class="w-full">
-    <div class="flex flex-col justify-center gap-4 min-h-screen mt-8">
-      <div class="bg-white rounded-lg shadow-lg hover:shadow-gray-400" :class="jogo.concluido? 'shadow-primary': ''"
+    <div class="flex flex-col justify-center gap-4 min-h-screen mt-8 mb-4">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-gray-400 border" :class="jogo.concluido? 'border-red-800': 'border-gray-400'"
         v-for="jogo in jogos_finais">
-        <div>
           <confront :jogo="jogo" @mudanca_placar="alterar_placar" @cancelar_placar="cancelar_placar" :key="'oitavas'+jogo.id"/>
-        </div>
       </div>
     </div>
   </div>

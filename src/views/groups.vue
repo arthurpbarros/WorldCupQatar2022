@@ -63,7 +63,7 @@ export default {
       :class="group.id == 'A' ? 'pt-12' : 'pt-0'" v-for="group in store.grupos" :key="group.id" v-if="fase_atual===0">
       <div class="mx-auto">
         <h2 class="text-white text-lg font-bold font-center text-center mt-5 rounded-t-lg"> GRUPO {{ group.id }}</h2>
-        <table class="table-auto border mb-5 bg-white text-sm text-center rounded-b-lg w-full">
+        <table class="table-auto border mb-5 bg-white text-sm text-center rounded-b-lg w-full uppercase">
           <tr class="">
             <th class="border px-4 py-4 text-primary"> POS </th>
             <th class="border px-4 py-4 text-primary"> PAÍS </th>
@@ -75,10 +75,10 @@ export default {
             <th class="border px-4 py-4 text-primary"> GC </th>
             <th class="border px-4 py-4 text-primary"> SG </th>
           </tr>
-          <tr :class="index < 2 ?'bg-green-100 text-green-900' : ''" v-for="(time, index) in group.times">
-            <td class="border px-4 py-4" :class="index < 2 ? '' : 'text-gray-700'"> {{ index + 1
+          <tr v-for="(time, index) in group.times">
+            <td class="border px-4 py-4" :class="index < 2 ? 'text-green-600' : 'text-gray-700'"> {{ index + 1
             }} </td>
-            <td class="border px-4 py-4"> {{ time.nome }} </td>
+            <td class="border px-4 py-4" :class="index < 2 ? 'text-green-600' : ''"> {{ time.nome }} </td>
             <td class="border px-4 py-4"> {{ time.pontos }} </td>
             <td class="border px-4 py-4"> {{ time.wins }} </td>
             <td class="border px-4 py-4"> {{ time.draw }} </td>
